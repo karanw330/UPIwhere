@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Financial Clarity - Transactions</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#fffbff",
+                        "on-surface-variant": "#464554",
+                        "tertiary-fixed": "#ffdcc5",
+                        "on-tertiary-fixed": "#301400",
+                        "outline-variant": "#c7c4d7",
+                        "on-secondary-fixed": "#2a1700",
+                        "tertiary": "#904900",
+                        "on-secondary-container": "#684000",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "tertiary-fixed-dim": "#ffb783",
+                        "surface-container-high": "#dce9ff",
+                        "surface-container-low": "#eff4ff",
+                        "primary": "#4648d4",
+                        "on-background": "#0b1c30",
+                        "primary-fixed": "#e1e0ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "background": "#f8f9ff",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#767586",
+                        "on-tertiary-fixed-variant": "#703700",
+                        "inverse-primary": "#c0c1ff",
+                        "on-surface": "#0b1c30",
+                        "on-primary-container": "#fffbff",
+                        "inverse-surface": "#213145",
+                        "surface-tint": "#494bd6",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#07006c",
+                        "surface-container": "#e5eeff",
+                        "secondary-container": "#fea619",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "tertiary-container": "#b55d00",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface": "#f8f9ff",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "secondary": "#855300",
+                        "secondary-fixed": "#ffddb8",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#d3e4fe",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "primary-container": "#6063ee",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "sm": "12px",
+                        "container-padding": "20px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xs": "8px",
+                        "2xl": "48px",
+                        "gutter": "16px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "title-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "title-lg": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-scale {
+            transition: transform 0.15s ease-in-out;
+        }
+        .active-scale:active {
+            transform: scale(0.95);
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            background-color: #f8f9ff;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center px-container-padding py-sm w-full sticky top-0 z-50 bg-background">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container active-scale cursor-pointer">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional and friendly portrait of a young woman with a warm smile, set against a blurred urban background with soft evening lighting. The image captures a clean, modern lifestyle aesthetic with a sophisticated and trustworthy mood, using a palette of soft teals and neutral tones to ensure clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZQUfuJ5u0hUeeoYxCgotpdHzhN3bSVtxThI-iURvTTrOAmjepaCKZXmeMdLw3acrmk3mbQs-qx2QAwH7c4TxQeplS2znJlyi5vSqRP7LOxKSWb70fQ7Dtx8JFj2NlGqJS9TB0wfhzMozpdIto20zB-rbuh1lC4VD-7UxREIVpcOX8sZkX4XmtLK0RPW9DN-FaULoGCCoy40mKT3gro-DEoborPLV4fDYtiMUd9tFQtDBqlO1ulu4kzx3TK6pP4V0eC1rSzao1T1s"/>
+</div>
+<h1 class="font-title-lg text-title-lg text-primary">Financial Clarity</h1>
+</div>
+<button class="material-symbols-outlined text-primary p-2 hover:bg-surface-container-low rounded-full active-scale">
+            notifications
+        </button>
+</header>
+<main class="pb-24">
+<!-- Month Selector & Visualization Summary -->
+<section class="px-container-padding py-md">
+<div class="flex items-center justify-between mb-lg">
+<div class="flex items-center gap-xs cursor-pointer group">
+<span class="font-headline-md text-headline-md-mobile text-on-surface">April 2024</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">keyboard_arrow_down</span>
+</div>
+<div class="bg-surface-container-low rounded-full p-1 flex">
+<button class="px-md py-1.5 rounded-full text-label-md font-label-md transition-all text-on-surface-variant hover:text-primary">Week</button>
+<button class="px-md py-1.5 rounded-full text-label-md font-label-md transition-all bg-primary text-on-primary shadow-sm">Month</button>
+<button class="px-md py-1.5 rounded-full text-label-md font-label-md transition-all text-on-surface-variant hover:text-primary">Year</button>
+</div>
+</div>
+<!-- Spending Summary Card (Bento Style) -->
+<div class="bg-surface-container-lowest rounded-2xl p-lg shadow-[0_10px_25px_-5px_rgba(0,0,0,0.05)] flex flex-col items-center justify-center relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-32 h-32 bg-primary/5 rounded-full blur-2xl"></div>
+<div class="relative w-64 h-64 mb-lg">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<!-- Progress segments with rounded caps -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#f1f5f9" stroke-width="8"></circle>
+<circle class="drop-shadow-[0_0_8px_rgba(254,166,25,0.2)]" cx="50" cy="50" fill="transparent" r="40" stroke="#fea619" stroke-dasharray="251.2" stroke-dashoffset="160.8" stroke-linecap="round" stroke-width="10"></circle>
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#4648d4" stroke-dasharray="251.2" stroke-dashoffset="201" stroke-linecap="round" stroke-width="10" transform="rotate(36 50 50)"></circle>
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#b55d00" stroke-dasharray="251.2" stroke-dashoffset="231.1" stroke-linecap="round" stroke-width="10" transform="rotate(108 50 50)"></circle>
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#ba1a1a" stroke-dasharray="251.2" stroke-dashoffset="241.1" stroke-linecap="round" stroke-width="10" transform="rotate(137 50 50)"></circle>
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#4ade80" stroke-dasharray="251.2" stroke-dashoffset="221.1" stroke-linecap="round" stroke-width="10" transform="rotate(152 50 50)"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">Total Spent</span>
+<span class="font-display-lg text-display-lg text-on-surface">$1,244.65</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-sm w-full">
+<div class="bg-surface-bright p-md rounded-xl flex flex-col gap-xs border border-surface-container">
+<div class="flex justify-between items-center">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span class="font-label-md text-label-md text-on-surface-variant">36%</span>
+</div>
+<span class="font-title-lg text-title-lg">$447.84</span>
+<span class="font-label-md text-label-md text-outline">Utilities</span>
+</div>
+<div class="bg-surface-bright p-md rounded-xl flex flex-col gap-xs border border-surface-container">
+<div class="flex justify-between items-center">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-md text-label-md text-on-surface-variant">20%</span>
+</div>
+<span class="font-title-lg text-title-lg">$248.80</span>
+<span class="font-label-md text-label-md text-outline">Payments</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Filters Section -->
+<section class="px-container-padding py-sm">
+<div class="flex overflow-x-auto gap-sm no-scrollbar pb-xs">
+<button class="whitespace-nowrap px-lg py-2.5 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-md active-scale">All</button>
+<button class="whitespace-nowrap px-lg py-2.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md border border-surface-container hover:bg-surface-container-low active-scale">Untagged</button>
+<button class="whitespace-nowrap px-lg py-2.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md border border-surface-container hover:bg-surface-container-low active-scale">Subscriptions</button>
+<button class="whitespace-nowrap px-lg py-2.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md border border-surface-container hover:bg-surface-container-low active-scale">Food &amp; Dining</button>
+<button class="whitespace-nowrap px-lg py-2.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md border border-surface-container hover:bg-surface-container-low active-scale">Shopping</button>
+</div>
+</section>
+<!-- Operations / Transaction List -->
+<section class="px-container-padding mt-lg">
+<div class="flex justify-between items-end mb-md">
+<h2 class="font-headline-md text-headline-md-mobile text-on-surface">Operations</h2>
+<button class="font-label-md text-label-md text-primary active-scale">View All</button>
+</div>
+<!-- Today Group -->
+<div class="mb-xl">
+<h3 class="font-label-md text-label-md text-outline mb-sm tracking-wide">TODAY</h3>
+<div class="space-y-sm">
+<!-- AT&T -->
+<div class="bg-surface-container-lowest p-md rounded-2xl flex items-center gap-md shadow-sm border border-surface-container-low active-scale cursor-pointer group">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center overflow-hidden">
+<img alt="AT&amp;T Logo" class="w-8 h-8 object-contain" data-alt="A clean, minimalist logo of a major telecommunications company displayed on a bright, professional background. The style is modern corporate, focusing on brand clarity and precision. The lighting is even and high-key, contributing to an overall sense of reliability and technological advancement within a light-mode financial interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5LhxpN3Gng47X_j9yI2vcwE6DeWNlS3XeBlPJnOOlQKpxguCB0lbo2NIWnHkiuThCHGv4Kj7iWY-kC-upgwzOPDlW8KPk9MSRnATV9fxjGW5UGxAJoJn0pfrh2RGmny1Zbr-E-Zbsjm9qkzUW1ANGsa0GkNOAiCKPzu8bUUG9pC70xfDTXMUWkBLY85Qgoejf4nnvh0C-yLhsXF48aWXsIBTXgPm7Zqn48vpQzfs8lhEzbRoZOB5VS-xdXPoIkzkqE3BxP8X_vC8"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">AT&amp;T</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Unlimited Family Plan</p>
+</div>
+<span class="font-headline-md text-headline-md-mobile text-error">-$34.99</span>
+</div>
+</div>
+</div>
+<!-- Adobe -->
+<div class="bg-surface-container-lowest p-md rounded-2xl flex items-center gap-md shadow-sm border border-surface-container-low active-scale cursor-pointer group">
+<div class="w-12 h-12 rounded-xl bg-[#EB1000] flex items-center justify-center">
+<span class="text-white font-bold text-xl">A</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">Adobe Subscription</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Creative Cloud All Apps</p>
+</div>
+<span class="font-headline-md text-headline-md-mobile text-error">-$59.99</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Yesterday Group -->
+<div>
+<h3 class="font-label-md text-label-md text-outline mb-sm tracking-wide">YESTERDAY</h3>
+<div class="space-y-sm">
+<!-- Blizzard -->
+<div class="bg-surface-container-lowest p-md rounded-2xl flex items-center gap-md shadow-sm border border-surface-container-low active-scale cursor-pointer group">
+<div class="w-12 h-12 rounded-xl bg-[#0074E4] flex items-center justify-center">
+<img alt="Blizzard Logo" class="w-full h-full object-cover rounded-xl" data-alt="A macro shot of a sleek, dark blue gaming hardware element with subtle LED lighting accents. The style is high-fidelity and modern, echoing the aesthetic of high-end entertainment brands. The atmosphere is energetic and premium, perfectly fitting into a sophisticated digital wallet UI that emphasizes clarity and control." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBduTRVzaxgC92WQx4quZb74eXrzb3fcnuNhsjWrkA86QAQbZQrdP5mkn75ujGo30hjL9-hQiAVXOKd34aG1bGDLVcyWkXmx9-JTWfxfpGLKy6sWDb7luRRpZUX1P6MIRvT9semURHggiCa3FGvpYFEigpHv-oqmqUidzqBH1O79t6vis4kR5hfrfPcswhjLG9OOAYLufLgWPVbEkPWfHpQTaoI3PtqLKnFW3ehJltJdYi2Riw2ZmBRwrTf4W00UC6XotRq3ziFO4"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">Blizzard Ent.</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">6-Month Subscription</p>
+</div>
+<span class="font-headline-md text-headline-md-mobile text-error">-$79.89</span>
+</div>
+</div>
+</div>
+<!-- Netflix -->
+<div class="bg-surface-container-lowest p-md rounded-2xl flex items-center gap-md shadow-sm border border-surface-container-low active-scale cursor-pointer group">
+<div class="w-12 h-12 rounded-xl bg-black flex items-center justify-center">
+<span class="text-[#E50914] font-bold text-2xl">N</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">Netflix</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Basic Plan</p>
+</div>
+<span class="font-headline-md text-headline-md-mobile text-error">-$7.99</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container-lowest shadow-[0_-4px_20px_rgba(0,0,0,0.05)] rounded-t-xl">
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1.5 hover:bg-surface-container rounded-full active-scale">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1.5 active-scale">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-label-md text-label-md">History</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1.5 hover:bg-surface-container rounded-full active-scale">
+<span class="material-symbols-outlined">label</span>
+<span class="font-label-md text-label-md">Tags</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1.5 hover:bg-surface-container rounded-full active-scale">
+<span class="material-symbols-outlined">rule</span>
+<span class="font-label-md text-label-md">Rules</span>
+</button>
+</nav>
+<script>
+        // Simple micro-interaction for active states
+        document.querySelectorAll('nav button, section button, section .cursor-pointer').forEach(el => {
+            el.addEventListener('click', () => {
+                // Here you would normally handle navigation or state changes
+                console.log('Interaction detected on:', el.innerText || el.className);
+            });
+        });
+    </script>
+</body></html>

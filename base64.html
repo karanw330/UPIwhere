@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Base64 Encoder</title>
+</head>
+<body>
+  <pre id="output"></pre>
+  <script>
+    const text = `# Design System: Neo-Brutalist Finance Tracker
+
+A premium Neo-Brutalist dark theme design system for a mobile finance/expense tracking application.
+
+## Color Palette
+
+### Backgrounds
+- **DarkBackground**: #0D0D0F (The primary screen background)
+- **DarkSurface**: #1A1A2E (Main card and component background)
+- **DarkSurfaceVariant**: #16213E (Subtle secondary surfaces, details, input fields)
+
+### Accents
+- **AccentPrimary**: #667EEA (Primary interactive color, Indigo)
+- **AccentSecondary**: #764BA2 (Secondary highlighting, Purple)
+- **AccentGreen**: #00C9A7 (Positive indicators, income, savings, Tagged items)
+- **AccentRed**: #FF6B6B (Negative indicators, high expenses, Untagged items)
+- **AccentOrange**: #F39C12 (Warnings, pending items)
+
+### Text
+- **TextPrimary**: #E8E8E8 (High-contrast primary labels and values)
+- **TextSecondary**: #8B8B9A (Medium-contrast helper/secondary text)
+
+## Typography
+- **Primary / Monospace**: Space Mono or Courier Prime for numeric amounts, dates, and account identifiers to emphasize mechanical precision.
+- **Condensed / Headings**: Outfit or Inter (Extra Bold/Black) for headlines, category tags, and screen headers.
+- **Body Text**: Inter (Regular/Medium) for descriptions, helpers, and general labels.
+
+## Component Specifications
+
+### Cards (Neo-Brutalism style)
+- **Border**: Solid, 2px wide, border color is a semi-transparent version of the main accent or text color (e.g., #667EEA with 30% alpha, or #E8E8E8 with 15% alpha).
+- **Shadow**: Solid offset shadow (no blur), offset is 4px to 6px horizontally and vertically, shadow color is #000000 with 60% opacity.
+- **Corners**: Rounded corners with 16px to 24px radius to balance the harsh borders.
+
+### Daily Trend Chart
+- A vertical bar chart showing daily spending.
+- Bars are filled with AccentPrimary gradient, and the highest spend day is highlighted with AccentGreen.
+- Grid lines are minimal or absent, keeping the focus on the bold bars.
+
+### Progress Bars (Merchants / Accounts)
+- **Track**: #2A2A3E
+- **Progress Fill**: Solid AccentPrimary or AccentSecondary
+- **Height**: 8px with fully rounded ends (4px corner radius)`;
+
+    // UTF-8 safe base64 encoding
+    function utf8_to_b64(str) {
+      return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
+        function toSolidBytes(match, p1) {
+          return String.fromCharCode('0x' + p1);
+        }));
+    }
+
+    document.getElementById('output').textContent = utf8_to_b64(text);
+  </script>
+</body>
+</html>

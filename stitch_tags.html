@@ -1,0 +1,524 @@
+<!-- Paste your Tags HTML here -->
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Financial Clarity - Tag Manager</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-sheet {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .tonal-elevation {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .donut-segment {
+            transition: stroke-width 0.3s ease, filter 0.3s ease;
+            cursor: pointer;
+        }
+
+        .donut-segment:hover {
+            stroke-width: 16;
+            filter: brightness(1.1);
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#fffbff",
+                        "on-surface-variant": "#464554",
+                        "tertiary-fixed": "#ffdcc5",
+                        "on-tertiary-fixed": "#301400",
+                        "outline-variant": "#c7c4d7",
+                        "on-secondary-fixed": "#2a1700",
+                        "tertiary": "#904900",
+                        "on-secondary-container": "#684000",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "tertiary-fixed-dim": "#ffb783",
+                        "surface-container-high": "#dce9ff",
+                        "surface-container-low": "#eff4ff",
+                        "primary": "#4648d4",
+                        "on-background": "#0b1c30",
+                        "primary-fixed": "#e1e0ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "background": "#f8f9ff",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#767586",
+                        "on-tertiary-fixed-variant": "#703700",
+                        "inverse-primary": "#c0c1ff",
+                        "on-surface": "#0b1c30",
+                        "on-primary-container": "#fffbff",
+                        "inverse-surface": "#213145",
+                        "surface-tint": "#494bd6",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#07006c",
+                        "surface-container": "#e5eeff",
+                        "secondary-container": "#fea619",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "tertiary-container": "#b55d00",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface": "#f8f9ff",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "secondary": "#855300",
+                        "secondary-fixed": "#ffddb8",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#d3e4fe",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "primary-container": "#6063ee",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "sm": "12px",
+                        "container-padding": "20px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xs": "8px",
+                        "2xl": "48px",
+                        "gutter": "16px",
+                        "xl": "32px"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface min-h-screen pb-32">
+    <!-- Top AppBar -->
+    <header
+        class="flex justify-between items-center px-container-padding py-sm w-full sticky top-0 z-40 bg-background/80 backdrop-blur-md">
+        <div class="flex items-center gap-md">
+            <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-fixed">
+                <img alt="User Profile" class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZQUfuJ5u0hUeeoYxCgotpdHzhN3bSVtxThI-iURvTTrOAmjepaCKZXmeMdLw3acrmk3mbQs-qx2QAwH7c4TxQeplS2znJlyi5vSqRP7LOxKSWb70fQ7Dtx8JFj2NlGqJS9TB0wfhzMozpdIto20zB-rbuh1lC4VD-7UxREIVpcOX8sZkX4XmtLK0RPW9DN-FaULoGCCoy40mKT3gro-DEoborPLV4fDYtiMUd9tFQtDBqlO1ulu4kzx3TK6pP4V0eC1rSzao1T1s" />
+            </div>
+            <h1 class="font-headline-md text-headline-md-mobile dark:text-on-background">Tags</h1>
+        </div>
+        <div class="flex items-center gap-sm">
+            <button
+                class="material-symbols-outlined p-xs hover:bg-surface-container-low rounded-full transition-all text-on-surface-variant">notifications</button>
+            <button
+                class="material-symbols-outlined p-xs hover:bg-surface-container-low rounded-full transition-all text-on-surface-variant">search</button>
+        </div>
+    </header>
+    <main class="px-container-padding pt-md max-w-4xl mx-auto">
+        <!-- Tag Stats Summary -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-md mb-2xl">
+            <div
+                class="bg-surface-container-lowest p-lg rounded-xl tonal-elevation border border-surface-container-low flex items-center justify-between transition-transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer group">
+                <div>
+                    <p class="text-label-md font-label-md text-on-surface-variant mb-xs">Active Tags</p>
+                    <p class="text-headline-md font-headline-md">14</p>
+                </div>
+                <div
+                    class="bg-primary-container/10 p-sm rounded-full group-hover:bg-primary-container transition-colors">
+                    <span
+                        class="material-symbols-outlined text-primary group-hover:text-on-primary-container">label</span>
+                </div>
+            </div>
+            <div
+                class="bg-surface-container-lowest p-lg rounded-xl tonal-elevation border border-surface-container-low flex items-center justify-between transition-transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer group">
+                <div>
+                    <p class="text-label-md font-label-md text-on-surface-variant mb-xs">Top Category</p>
+                    <p class="text-headline-md font-headline-md">Food</p>
+                </div>
+                <div
+                    class="bg-secondary-container/10 p-sm rounded-full group-hover:bg-secondary-container transition-colors">
+                    <span
+                        class="material-symbols-outlined text-secondary group-hover:text-on-secondary-container">restaurant</span>
+                </div>
+            </div>
+            <div
+                class="bg-surface-container-lowest p-lg rounded-xl tonal-elevation border border-surface-container-low flex items-center justify-between transition-transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer group">
+                <div>
+                    <p class="text-label-md font-label-md text-on-surface-variant mb-xs">Usage Rate</p>
+                    <p class="text-headline-md font-headline-md">84%</p>
+                </div>
+                <div
+                    class="bg-surface-container-highest/50 p-sm rounded-full group-hover:bg-surface-container-highest transition-colors">
+                    <span class="material-symbols-outlined text-on-surface-variant">monitoring</span>
+                </div>
+            </div>
+        </section>
+        <!-- Tags List Section -->
+        <section>
+            <div class="flex justify-between items-center mb-md px-base">
+                <h2 class="text-title-lg font-title-lg text-on-surface">Categories &amp; Tags</h2>
+                <button class="text-primary text-label-md font-label-md hover:underline">Reorder</button>
+            </div>
+            <div class="space-y-sm">
+                <!-- Tag Item 1 -->
+                <div
+                    class="group flex items-center justify-between bg-surface-container-lowest p-md rounded-xl border border-surface-container-low hover:border-primary/30 transition-all active:scale-[0.97] cursor-pointer">
+                    <div class="flex items-center gap-md">
+                        <div
+                            class="w-12 h-12 flex items-center justify-center rounded-xl bg-orange-100 text-orange-600 transition-transform group-hover:scale-110">
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">restaurant</span>
+                        </div>
+                        <div>
+                            <p class="text-body-lg font-title-lg">Dining &amp; Food</p>
+                            <p class="text-label-md font-label-md text-outline">Used in 42 transactions</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-xs">
+                        <span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                        <button
+                            class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-surface-container rounded-full">more_vert</button>
+                    </div>
+                </div>
+                <!-- Tag Item 2 -->
+                <div
+                    class="group flex items-center justify-between bg-surface-container-lowest p-md rounded-xl border border-surface-container-low hover:border-primary/30 transition-all active:scale-[0.97] cursor-pointer">
+                    <div class="flex items-center gap-md">
+                        <div
+                            class="w-12 h-12 flex items-center justify-center rounded-xl bg-blue-100 text-blue-600 transition-transform group-hover:scale-110">
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">commute</span>
+                        </div>
+                        <div>
+                            <p class="text-body-lg font-title-lg">Transportation</p>
+                            <p class="text-label-md font-label-md text-outline">Used in 18 transactions</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-xs">
+                        <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                        <button
+                            class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-surface-container rounded-full">more_vert</button>
+                    </div>
+                </div>
+                <!-- Tag Item 3 -->
+                <div
+                    class="group flex items-center justify-between bg-surface-container-lowest p-md rounded-xl border border-surface-container-low hover:border-primary/30 transition-all active:scale-[0.97] cursor-pointer">
+                    <div class="flex items-center gap-md">
+                        <div
+                            class="w-12 h-12 flex items-center justify-center rounded-xl bg-purple-100 text-purple-600 transition-transform group-hover:scale-110">
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">subscriptions</span>
+                        </div>
+                        <div>
+                            <p class="text-body-lg font-title-lg">Entertainment</p>
+                            <p class="text-label-md font-label-md text-outline">Used in 12 transactions</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-xs">
+                        <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                        <button
+                            class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-surface-container rounded-full">more_vert</button>
+                    </div>
+                </div>
+                <!-- Tag Item 4 -->
+                <div
+                    class="group flex items-center justify-between bg-surface-container-lowest p-md rounded-xl border border-surface-container-low hover:border-primary/30 transition-all active:scale-[0.97] cursor-pointer">
+                    <div class="flex items-center gap-md">
+                        <div
+                            class="w-12 h-12 flex items-center justify-center rounded-xl bg-green-100 text-green-600 transition-transform group-hover:scale-110">
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">savings</span>
+                        </div>
+                        <div>
+                            <p class="text-body-lg font-title-lg">Savings Goal</p>
+                            <p class="text-label-md font-label-md text-outline">Used in 5 transactions</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-xs">
+                        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                        <button
+                            class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-surface-container rounded-full">more_vert</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Bento Grid Feature: Visual Analytics Preview -->
+        <section class="mt-2xl">
+            <h2 class="text-title-lg font-title-lg text-on-surface mb-md px-base">Visual Breakdown</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-md auto-rows-[160px]">
+                <div
+                    class="md:col-span-2 md:row-span-2 bg-surface-container-lowest p-lg rounded-2xl border border-surface-container-low flex flex-col justify-center items-center tonal-elevation relative overflow-hidden">
+                    <!-- Custom Donut Component -->
+                    <div class="relative w-40 h-40 flex items-center justify-center">
+                        <svg class="w-full h-full transform -rotate-90">
+                            <circle class="text-surface-container" cx="80" cy="80" fill="transparent" r="70"
+                                stroke="currentColor" stroke-width="12"></circle>
+                            <!-- Blue Segment (Dining) -->
+                            <circle class="text-primary donut-segment" cx="80" cy="80" fill="transparent"
+                                onmouseout="hideTooltip()" onmouseover="showTooltip('Dining: 75%')" r="70"
+                                stroke="currentColor" stroke-dasharray="440" stroke-dashoffset="110" stroke-width="12">
+                            </circle>
+                            <!-- Orange Segment (Other) -->
+                            <circle class="text-secondary donut-segment" cx="80" cy="80" fill="transparent"
+                                onmouseout="hideTooltip()" onmouseover="showTooltip('Other: 25%')" r="70"
+                                stroke="currentColor" stroke-dasharray="440" stroke-dashoffset="330"
+                                stroke-linecap="round" stroke-width="12"></circle>
+                        </svg>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                            <span class="text-label-md font-label-md text-outline" id="chart-label">Spent</span>
+                            <span class="text-title-lg font-headline-md" id="chart-value">$2,440</span>
+                        </div>
+                    </div>
+                    <p class="mt-md text-label-md text-on-surface-variant">Allocation by Tag</p>
+                    <!-- Mini Tooltip -->
+                    <div class="absolute top-4 bg-on-surface text-surface px-sm py-xs rounded-lg text-label-md opacity-0 transition-opacity pointer-events-none shadow-lg"
+                        id="donut-tooltip"></div>
+                </div>
+                <div
+                    class="md:col-span-2 bg-gradient-to-br from-primary to-primary-container p-lg rounded-2xl text-on-primary tonal-elevation flex flex-col justify-between group cursor-pointer transition-transform hover:scale-[1.01]">
+                    <div>
+                        <p class="text-label-md opacity-90">Subscription Health</p>
+                        <p class="text-headline-md font-headline-md group-hover:translate-x-1 transition-transform">
+                            Optimal</p>
+                    </div>
+                    <div class="flex gap-xs">
+                        <div class="h-1 bg-white/30 flex-1 rounded-full overflow-hidden">
+                            <div class="h-full bg-white w-[75%] transition-all duration-1000 ease-out" id="health-bar">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="md:col-span-1 bg-surface-container p-md rounded-2xl flex flex-col items-center justify-center gap-xs hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95">
+                    <span class="material-symbols-outlined text-primary scale-125">auto_awesome</span>
+                    <p class="text-label-md font-label-md text-center">Auto-Tag Enabled</p>
+                </div>
+                <div
+                    class="md:col-span-1 bg-surface-container-highest p-md rounded-2xl flex flex-col items-center justify-center gap-xs hover:bg-surface-variant transition-colors cursor-pointer active:scale-95">
+                    <span class="material-symbols-outlined text-secondary scale-125">sell</span>
+                    <p class="text-label-md font-label-md text-center">14 Active Labels</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- FAB -->
+    <button
+        class="fixed bottom-24 right-container-padding bg-primary text-on-primary w-14 h-14 rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-all z-30 hover:shadow-primary/30"
+        onclick="toggleSheet()">
+        <span class="material-symbols-outlined">add</span>
+    </button>
+    <!-- Bottom Navigation Shell -->
+    <nav
+        class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] bg-surface-container-lowest dark:bg-inverse-surface rounded-t-xl">
+        <div
+            class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1.5 hover:bg-surface-container dark:hover:bg-surface-variant rounded-full transition-all cursor-pointer">
+            <span class="material-symbols-outlined">home</span>
+            <span class="font-label-md text-label-md">Home</span>
+        </div>
+        <div
+            class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1.5 hover:bg-surface-container dark:hover:bg-surface-variant rounded-full transition-all cursor-pointer">
+            <span class="material-symbols-outlined">history</span>
+            <span class="font-label-md text-label-md">History</span>
+        </div>
+        <div
+            class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-full px-4 py-1.5 transition-all cursor-pointer">
+            <span class="material-symbols-outlined">label</span>
+            <span class="font-label-md text-label-md">Tags</span>
+        </div>
+        <div
+            class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1.5 hover:bg-surface-container dark:hover:bg-surface-variant rounded-full transition-all cursor-pointer">
+            <span class="material-symbols-outlined">rule</span>
+            <span class="font-label-md text-label-md">Rules</span>
+        </div>
+    </nav>
+    <!-- Add Tag Bottom Sheet -->
+    <div class="fixed inset-0 z-[60] pointer-events-none transition-all duration-300" id="add-tag-sheet">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-on-background/20 opacity-0 transition-opacity duration-300 pointer-events-none"
+            id="sheet-backdrop" onclick="toggleSheet()"></div>
+        <!-- Sheet Content -->
+        <div class="absolute bottom-0 left-0 right-0 glass-sheet rounded-t-3xl p-lg transform translate-y-full transition-transform duration-500 ease-out pointer-events-auto shadow-2xl border-t border-white/40"
+            id="sheet-content">
+            <div class="w-12 h-1 bg-outline-variant mx-auto mb-lg rounded-full cursor-grab active:cursor-grabbing"
+                onclick="toggleSheet()"></div>
+            <h3 class="text-headline-md font-headline-md mb-lg">Create New Tag</h3>
+            <div class="space-y-lg mb-xl">
+                <div>
+                    <label class="block text-label-md font-label-md text-outline mb-xs ml-base">Tag Name</label>
+                    <input
+                        class="w-full bg-white/50 border-outline-variant rounded-xl px-md py-sm focus:ring-primary focus:border-primary transition-all"
+                        placeholder="e.g. Shopping, Coffee, Rent" type="text" />
+                </div>
+                <div>
+                    <label class="block text-label-md font-label-md text-outline mb-md ml-base">Select Color</label>
+                    <div class="flex flex-wrap gap-md justify-between" id="color-picker">
+                        <button
+                            class="w-10 h-10 rounded-full bg-blue-500 transition-all ring-offset-2 ring-primary border-2 border-transparent"
+                            onclick="selectItem(this, 'color')"></button>
+                        <button
+                            class="w-10 h-10 rounded-full bg-orange-500 transition-all ring-offset-2 ring-primary border-2 border-transparent"
+                            onclick="selectItem(this, 'color')"></button>
+                        <button
+                            class="w-10 h-10 rounded-full bg-purple-500 transition-all ring-offset-2 ring-primary border-2 border-transparent"
+                            onclick="selectItem(this, 'color')"></button>
+                        <button
+                            class="w-10 h-10 rounded-full bg-green-500 transition-all ring-offset-2 ring-primary border-2 border-transparent"
+                            onclick="selectItem(this, 'color')"></button>
+                        <button
+                            class="w-10 h-10 rounded-full bg-red-500 transition-all ring-offset-2 ring-primary border-2 border-transparent"
+                            onclick="selectItem(this, 'color')"></button>
+                        <button
+                            class="w-10 h-10 rounded-full bg-pink-500 transition-all ring-offset-2 ring-primary border-2 border-transparent"
+                            onclick="selectItem(this, 'color')"></button>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-label-md font-label-md text-outline mb-md ml-base">Choose Icon</label>
+                    <div class="grid grid-cols-6 gap-sm bg-surface-container-low/40 p-md rounded-2xl" id="icon-picker">
+                        <button
+                            class="p-xs rounded-lg transition-all material-symbols-outlined text-on-surface-variant hover:bg-white/50"
+                            onclick="selectItem(this, 'icon')">shopping_bag</button>
+                        <button
+                            class="p-xs rounded-lg transition-all material-symbols-outlined text-on-surface-variant hover:bg-white/50"
+                            onclick="selectItem(this, 'icon')">home</button>
+                        <button
+                            class="p-xs rounded-lg transition-all material-symbols-outlined text-on-surface-variant hover:bg-white/50"
+                            onclick="selectItem(this, 'icon')">directions_car</button>
+                        <button
+                            class="p-xs rounded-lg transition-all material-symbols-outlined text-on-surface-variant hover:bg-white/50"
+                            onclick="selectItem(this, 'icon')">medical_services</button>
+                        <button
+                            class="p-xs rounded-lg transition-all material-symbols-outlined text-on-surface-variant hover:bg-white/50"
+                            onclick="selectItem(this, 'icon')">work</button>
+                        <button
+                            class="p-xs rounded-lg transition-all material-symbols-outlined text-on-surface-variant hover:bg-white/50"
+                            onclick="selectItem(this, 'icon')">fitness_center</button>
+                    </div>
+                </div>
+            </div>
+            <button
+                class="w-full bg-primary text-on-primary py-lg rounded-xl font-headline-md active:scale-95 transition-transform hover:bg-primary/90"
+                onclick="toggleSheet()">Save Tag</button>
+            <div class="h-xs"></div>
+        </div>
+    </div>
+    <script>
+        let sheetOpen = false;
+        function toggleSheet() {
+            const sheet = document.getElementById('add-tag-sheet');
+            const backdrop = document.getElementById('sheet-backdrop');
+            const content = document.getElementById('sheet-content');
+
+            if (!sheetOpen) {
+                backdrop.classList.remove('opacity-0', 'pointer-events-none');
+                backdrop.classList.add('opacity-100', 'pointer-events-auto');
+                content.classList.remove('translate-y-full');
+                sheet.classList.remove('pointer-events-none');
+                sheetOpen = true;
+            } else {
+                backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+                backdrop.classList.add('opacity-0', 'pointer-events-none');
+                content.classList.add('translate-y-full');
+                sheet.classList.add('pointer-events-none');
+                sheetOpen = false;
+            }
+        }
+
+        function selectItem(el, type) {
+            const container = type === 'color' ? document.getElementById('color-picker') : document.getElementById('icon-picker');
+            const items = container.querySelectorAll('button');
+
+            items.forEach(item => {
+                if (type === 'color') {
+                    item.classList.remove('ring-4', 'border-white');
+                } else {
+                    item.classList.remove('bg-primary-container', 'text-on-primary-container', 'tonal-elevation', 'bg-white');
+                    item.classList.add('text-on-surface-variant');
+                }
+            });
+
+            if (type === 'color') {
+                el.classList.add('ring-4', 'border-white');
+            } else {
+                el.classList.add('bg-white', 'tonal-elevation');
+                el.classList.remove('text-on-surface-variant');
+            }
+        }
+
+        function showTooltip(text) {
+            const tooltip = document.getElementById('donut-tooltip');
+            const label = document.getElementById('chart-label');
+            const value = document.getElementById('chart-value');
+
+            tooltip.innerText = text;
+            tooltip.classList.remove('opacity-0');
+            tooltip.classList.add('opacity-100');
+
+            // Dynamic center update
+            if (text.includes('Dining')) {
+                label.innerText = 'Dining';
+                value.innerText = '75%';
+                value.classList.add('text-primary');
+            } else {
+                label.innerText = 'Other';
+                value.innerText = '25%';
+                value.classList.add('text-secondary');
+            }
+        }
+
+        function hideTooltip() {
+            const tooltip = document.getElementById('donut-tooltip');
+            const label = document.getElementById('chart-label');
+            const value = document.getElementById('chart-value');
+
+            tooltip.classList.add('opacity-0');
+            tooltip.classList.remove('opacity-100');
+
+            label.innerText = 'Spent';
+            value.innerText = '$2,440';
+            value.classList.remove('text-primary', 'text-secondary');
+        }
+
+        // Initialize first selections
+        window.onload = () => {
+            selectItem(document.querySelector('#color-picker button'), 'color');
+            selectItem(document.querySelector('#icon-picker button'), 'icon');
+
+            // Simple health bar animation trigger
+            setTimeout(() => {
+                const bar = document.getElementById('health-bar');
+                bar.style.width = '0%';
+                setTimeout(() => bar.style.width = '75%', 100);
+            }, 500);
+        };
+    </script>
+</body>
+
+</html>

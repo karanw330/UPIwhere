@@ -1,0 +1,40 @@
+# Gradle / Android Studio files
+*.iml
+.gradle/
+/local.properties
+/.idea/workspace.xml
+/.idea/tasks.xml
+/.idea/gradle.xml
+/.idea/assetWizardSettings.xml
+/.idea/dictionaries
+/.idea/libraries/
+/.idea/caches/
+/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+/as-debug.log
+
+# Log files
+*.log
+
+# Keystore / signing files
+*.jks
+*.keystore
+*.p12
+
+# Local configuration
+local.properties
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Secrets & environment
+secrets.properties
+.env
+.env.*
+
+# Personal SMS & Statement templates
+sample_bank_messages.md
+DESIGN_TEMP.md
